@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "kalameh";
+  src: local("Kalame"), local("sans-serif "),
+    url("./components/Fonts/TTF/Kalameh-Regular.ttf") format("truetype");
+
+  font-weight: normal;
+}
+@font-face {
+  font-family: "kalameh Bold" !important;
+  src: local("kalameh"), local("sans-serif "),
+    url("./components/Fonts/TTF/Kalameh-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@layer base {
+  :root {
+    --color-text-base: #b4b4b4;
+    --color-text-muted: #b4b4b4;
+  }
+  .ltr {
+    direction: ltr;
+  }
+
+  .timer {
+  }
+  .margin {
+    margin: 0 2.7rem;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .organizerImg {
+    display: inline-block;
+    width: 170px;
+    height: 170px;
+    border-radius: 32px;
+    margin: 3rem 0 1rem 1rem;
+  }
+  .input {
+    display: block;
+    margin: 2rem 0;
+    background: rgba(255, 255, 255, 0.22);
+    border: 1px solid #2d3342;
+    border-radius: 26px;
+    padding: 0rem 2rem;
+    height: 81px;
+    width: 35rem;
+  }
+  .input::placeholder {
+    color: rgba(45, 51, 66, 0.33);
+    font-weight: 1000;
+    font-size: 28px;
+    line-height: 126px;
+  }
+  body {
+    @apply bg-[#2D3342]   text-[16px] text-[white];
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  h1 {
+    @apply text-[36px] leading-[44px];
+  }
+
+  h2 {
+    @apply text-base;
+  }
+
+  li {
+    @apply cursor-pointer m-0 mx-4;
+  }
+
+  button {
+    @apply rounded-lg  p-1 px-3  uppercase border-2  text-center;
+  }
+  a {
+    @apply border-0  py-[1rem] w-[100%];
+  }
+  p {
+    @apply text-justify tracking-tighter text-[white]/60 text-[15px] my-10;
+  }
+}
+*,
+html,
+body {
+  font-family: "kalameh", "kalameh Bold", "IranSans", "IranSansXFaNum", Courier,
+    monospace;
+  direction: rtl;
+  box-sizing: border-box;
+
+  /* word-break: break-all; */
+
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+html {
+  direction: rtl;
+}
+.container {
+  width: 80%;
+  max-width: 1116px;
+  margin: 0 auto;
+  padding: 0rem;
+  height: max-content;
+}
+
+@media only screen and (max-width: 600px) {
+  .input {
+    margin: 1rem 0;
+    padding: 0rem 2rem;
+    height: 51px;
+    width: 100%;
+  }
+  .input::placeholder {
+    font-size: 20px;
+  }
+  .margin {
+    margin: 0 1.5rem;
+
+    font-size: 15px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media only screen and (max-width: 1000px) {
+  .margin {
+    margin: 0 2rem;
+    align-items: center;
+    font-size: 15px;
   }
 }
